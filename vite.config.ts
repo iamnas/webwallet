@@ -1,21 +1,21 @@
-// import { defineConfig } from 'vite'
-// import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill'
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+// import { nodePolyfills } from 'vite-plugin-node-polyfills';
+// import wasm from 'vite-plugin-wasm';
 
-import react from '@vitejs/plugin-react'
+import wasm from "vite-plugin-wasm";
+import topLevelAwait from "vite-plugin-top-level-await";
 
-// // https://vitejs.dev/config/
-// export default defineConfig({
-//   plugins: [react()],
- 
-// }
-// })
-
-import { defineConfig } from 'vite'
-import { nodePolyfills } from 'vite-plugin-node-polyfills'
-import wasm from 'vite-plugin-wasm';
 
 export default defineConfig({
-  plugins: [react(),nodePolyfills(),wasm()],
-
-  // plugins: [nodePolyfills()]
-})
+  optimizeDeps: {
+    exclude: ["vite-repro-worker"],
+  },
+  plugins: [
+    wasm(),
+    topLevelAwait(),
+    react()],
+  esbuild: {
+    target: "es2022", // Ensure modern JS features like top-level await are supported
+  },
+});
