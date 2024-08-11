@@ -1,50 +1,82 @@
-# React + TypeScript + Vite
+# Crypto Wallet Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple web application that allows users to create their own cryptocurrency wallets. The app is built using Vite, React, and TypeScript.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Create Wallet:** Users can generate their own crypto wallet by clicking on the "Create Wallet" button.
+- **Mnemonic Phrase:** Upon wallet creation, a 12-word mnemonic phrase is displayed. Users are instructed to write it down securely as it is required for accessing the wallet.
+- **Address Generation:** The app allows users to generate and display their Solana and EVM addresses.
+- **Private Key:** Users can view their private key by clicking the "Show Private Key" button. This is initially hidden for security purposes.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Frontend Framework:** React
+- **Build Tool:** Vite
+- **Language:** TypeScript
+- **UI/Styling:** Custom CSS
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Prerequisites
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Node.js installed on your local machine.
+- Yarn or npm as a package manager.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Installation
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/iamnas/webwallet.git
+    cd webwallet
+    ```
+
+2. Install dependencies:
+    ```bash
+    yarn install
+    # or
+    npm install
+    ```
+
+3. Start the development server:
+    ```bash
+    yarn dev
+    # or
+    npm run dev
+    ```
+
+4. Open your browser and navigate to `http://localhost:5173` to see the app in action.
+
+### Deployment
+
+This app is currently deployed on Vercel. You can access it via the following URL:
+
+[Crypto Wallet App](https://webwallet-chi.vercel.app/)
+
+### Screenshots
+
+- **Demo GIF**: A quick demo of the app in action.
+
+  ![Demo](./screenshots/demo.gif)
+
+- **Initial Screen**: User can create a wallet by clicking on the "Create Wallet" button.
+
+  ![Initial Screen](./screenshots/initial_screen.png)
+
+- **Mnemonic Phrase Screen**: Displays a 12-word mnemonic phrase that the user must write down and store securely.
+
+  ![Mnemonic Phrase Screen](./screenshots/mnemonic_phrase_screen.png)
+
+- **Address Display Screen**: Shows the generated Solana or EVM address along with an option to reveal the private key.
+
+  ![Address Display Screen](./screenshots/address_display_screen.png)
+
+### License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+### Acknowledgments
+
+- This project was bootstrapped with [Vite](https://vitejs.dev/).
+- Special thanks to all the contributors of the various libraries used in this project.
+
