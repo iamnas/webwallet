@@ -1,0 +1,180 @@
+/* .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #f1f1f1;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+
+  gap:20px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: 1px solid #666;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-button.active {
+  background-color: #00d395;
+  color: white;
+  border-color: #00d395;
+}
+
+.tab-button:hover {
+  background-color: #555;
+}
+
+.address-input {
+  margin-bottom: 20px;
+}
+
+.address-input input {
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.address-box {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.address-box h2 {
+  margin-bottom: 15px;
+  color: #00d395;
+}
+
+.address-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 4px;
+}
+
+.address-item p {
+  margin: 5px 0;
+}
+
+.key {
+  font-weight: bold;
+  color: #ffdd57;
+}
+
+.private-key-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #00d395;
+  color: white;
+  border: 1px solid #666;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.private-key-button:hover {
+  background-color: #555;
+}
+ */
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #f1f1f1;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+
+  gap:20px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: 1px solid #666;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-button.active {
+  background-color: #00d395;
+  color: white;
+  border-color: #00d395;
+}
+
+.tab-button:hover {
+  background-color: #555;
+}
+
+.address-input {
+  margin-bottom: 20px;
+}
+
+.address-input input {
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.address-box {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.address-box h2 {
+  margin-bottom: 15px;
+  color: #00d395;
+}
+
+.address-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 4px;
+  word-wrap: break-word;
+}
+
+.address-item p {
+  margin: 5px 0;
+}
+
+.key {
+  font-weight: bold;
+  color: #ffdd57;
+  word-wrap: break-word;
+}
+
+.private-key-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #00d395;
+  color: white;
+  border: 1px solid #666;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.private-key-button:hover {
+  background-color: #555;
+}
