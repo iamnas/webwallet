@@ -1,6 +1,6 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-// import { nodePolyfills } from 'vite-plugin-node-polyfills';
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
 // import wasm from 'vite-plugin-wasm';
 
 import wasm from "vite-plugin-wasm";
@@ -12,6 +12,7 @@ export default defineConfig({
     exclude: ["vite-repro-worker"],
   },
   plugins: [
+    nodePolyfills(),
     wasm(),
     topLevelAwait(),
     react()],
