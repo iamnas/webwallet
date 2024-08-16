@@ -1,4 +1,13 @@
-import { Keypair } from "@solana/web3.js";
+import {
+  Keypair,
+  clusterApiUrl,
+  Connection,
+  PublicKey,
+  LAMPORTS_PER_SOL,
+  Transaction,
+  SystemProgram,
+  sendAndConfirmTransaction,
+} from "@solana/web3.js";
 
 import { derivePath } from "ed25519-hd-key";
 import nacl from "tweetnacl";
@@ -70,32 +79,6 @@ export function getSolanaWallet(secretKey: Uint8Array) {
   const privateKey = bs58.encode(keypair.secretKey);
 
   return { publicKey, privateKey };
-
-  // let keypair :Keypair;
-  // try {
-  //   // Attempt to create a keypair from JSON secret key
-  //   keypair = Keypair.fromSecretKey(new Uint8Array(JSON.parse(secretKey)));
-  // } catch {
-  //   // Try the next method
-  //   try {
-  //     // Attempt to create a keypair from bs58 decode of secret key
-  //     keypair = Keypair.fromSecretKey(new Uint8Array(bs58.decode(secretKey)));
-  //   } catch {
-  //     // Try the next method
-  //     try {
-  //       // Attempt to create a keypair from hex decode of secret key
-  //       keypair = Keypair.fromSecretKey(Buffer.from(secretKey, "hex"));
-  //     } catch {
-  //       // Failure, no other ways to interpret
-  //       throw new Error("Invalid Solana private key");
-  //     }
-  //   }
-  // }
-
-  // const publicKey = keypair.publicKey.toBase58();
-  // const privateKey = bs58.encode(keypair.secretKey);
-
-  // return { publicKey, privateKey };
 }
 
 export function createMnemonic() {
@@ -115,4 +98,35 @@ export function getSolanaWalletAddress(
   }
 
   return address;
+}
+
+export async function getSolBalance(address: string) {
+  const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
+  const wallet = new PublicKey(address);
+  return (await connection.getBalance(wallet)) / LAMPORTS_PER_SOL;
+}
+
+export async function sendTransaction(pk: string, to: string, amount: number) {
+  try {
+    const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
+    const secret = bs58.decode(pk);
+    const from = Keypair.fromSecretKey(new Uint8Array(secret));
+
+    const transaction = new Transaction().add(
+      SystemProgram.transfer({
+        fromPubkey: from.publicKey,
+        toPubkey: new PublicKey(to),
+        lamports: LAMPORTS_PER_SOL * amount,
+      })
+    );
+
+    const signature = await sendAndConfirmTransaction(connection, transaction, [
+      from,
+    ]);
+
+    return signature;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
 }

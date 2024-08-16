@@ -49,6 +49,8 @@
   background-color: #222;
   padding: 20px;
   border-radius: 8px;
+
+
 }
 
 .address-box h2 {
@@ -87,4 +89,60 @@
 
 .private-key-button:hover {
   background-color: #555;
+}
+
+
+a:hover{
+  background-color: #555 !important; 
+  color: white !important;
+}
+
+
+
+
+
+.input-box {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.popup-content {
+  padding: 20px;
+  /* background-color: #fff; */
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* .transaction-status {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: green;
+} */
+
+.transaction-status.error {
+  color: red;
+}
+
+
+
+.transaction-status {
+  word-wrap: break-word;
+  max-width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #fff; /* Adjust as needed */
+}
+
+.transaction-status a {
+  color: #1e90ff; /* Customize the link color */
+  text-decoration: none;
+}
+
+.transaction-status a:hover {
+  text-decoration: underline;
 }
