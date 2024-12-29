@@ -2,6 +2,7 @@ import { getSolanaWalletAddress, getSolBalance, sendTransaction } from '../servi
 import { getEthWalletAddress } from '../service/ethWallet';
 import { useState } from 'react';
 import './AddressDisplay.css';
+// import { LayoutGrid, QrCode, Send, Wallet } from 'lucide-react';
 
 interface ADDRESS {
     publicKey: string;
@@ -253,4 +254,8 @@ function AddressDisplay({ seedPhrase }: { seedPhrase: string[] }) {
     );
 }
 
-export default AddressDisplay;
+
+
+
+
+  export default AddressDisplay;
