@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { SeedPhraseGrid } from './SeedPhraseGrid';
 import { Copy, AlertTriangle, X, ShieldCheck } from 'lucide-react';
 
