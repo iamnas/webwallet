@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { generateMnemonic } from 'bip39';
 import { CreateWalletButton } from '../components/CreateWalletButton';
 import { CreateWalletPopup } from '../components/CreateWalletPopup';
